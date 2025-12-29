@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "X Video Filter",
+  "version": "1.0",
+  "description": "Filter out video posts from your X (Twitter) timeline",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*", "*://x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
